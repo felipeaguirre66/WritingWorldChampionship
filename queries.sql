@@ -347,7 +347,7 @@ FULL OUTER JOIN MundialJuradoVoto as mjv on mjv.IdUsuarioSubCategoria = usc.IdUs
 FULL OUTER JOIN MundialJurado_Etiquetas as mje on mje.idEtiqueta = mjv.idEtiqueta
 FULL OUTER JOIN MundialTextosSeleccionEquipo as mtse on mtse.IdMundialTextoSeleccionEquipo = mjv.IdMundialTextoSeleccionEquipo
 FULL OUTER JOIN MundialTextos as mt on mt.IdMundialTexto = mtse.IdMundialTexto
-FULL OUTER JOIN MundialTextosGanadores as mtg on mt.IdMundial = mtse.IdMundial
+FULL OUTER JOIN MundialTextosGanadores as mtg on mt.IdMundialTexto = mtse.IdMundialTexto
 FULL OUTER JOIN TextoVotoEquipo as tve on tve.IdMundialTexto = mt.IdMundialTexto
 
 ;
@@ -356,16 +356,16 @@ FULL OUTER JOIN TextoVotoEquipo as tve on tve.IdMundialTexto = mt.IdMundialTexto
 
 --- Función para generar nuevo nombre de cada columna (tabla_columna) y evitar duplicados
 SELECT
-      'ep.' + COLUMN_NAME + ' as ' + 'EmergenciaPass'+'_'+COLUMN_NAME+','
+      'mpr.' + COLUMN_NAME + ' as ' + 'Mundial_Preguntas_Respuestas'+'_'+COLUMN_NAME+','
     FROM
         INFORMATION_SCHEMA.COLUMNS
     WHERE
-        TABLE_NAME = 'EmergenciaPass'
+        TABLE_NAME = 'Mundial_Preguntas_Respuestas'
 
 GO
 
 
 
-select * from Mundial;
+select * from Paises;
 
-select * from MundialTextosGanadores;
+select * from IdiomaClaves;
