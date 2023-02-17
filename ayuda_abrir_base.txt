@@ -1,0 +1,6 @@
+Descomprimir todo.
+hay que instalar SQL Server y Microsoft SQL Server Managment Studio (MSSMS). En (MSSMS), crear una base
+de datos vacía, clic derecho sobre esa base Tasks-> Restore->Database, elegir la database (.bak) y darle ok. 
+Tarda un rato y se restaura (https://blog.sqlbak.com/open-a-bak-file).
+En algún momento tira error y creo que es porque hay que ponerle el mismo nombre a la base que al archivo 
+(creo que es Chasco el nombre)
